@@ -1,3 +1,14 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+/* 彻底隐藏左侧目录的顶层标题(及折叠按钮) */
+button#explorer {
+  display: none !important;
+}
+
+/* 微调一下目录树的间距，让它直接顶格，视觉更舒服 */
+ul.explorer-content {
+  margin-top: 0 !important;
+  display: block !important; /* 确保强制展开，防止被按钮状态影响 */
+}
