@@ -1,16 +1,3 @@
----
-title: Spring Security 基础入门
-description: 本文聚焦 Spring Security 的基础认知，系统讲解核心功能（认证与授权）、关键组件（UserDetails、SecurityContextHolder 等）及过滤器链执行流程，帮助初学者建立对框架的整体理解，为后续实践奠定理论基础。
-author:
-  - 闵煜
-tags:
-  - SpringSecurity
-  - 安全框架
-  - 认证与授权
-created: 2025-09-02
-modified: 2025-09-05
----
-
 ## 框架基础认知
 
 ### 什么是 Spring Security？
@@ -155,7 +142,7 @@ String username = SecurityContextHolder.getContext()
 - **核心方法**：  
   ```java  
   String getAuthority(); // 返回权限字符串（如"ROLE_ADMIN"、"user:delete"）  
-  ```  
+  ```
 - **常见实现类**：`SimpleGrantedAuthority`（直接存储权限字符串）。  
 - **作用**：  
   - 在认证成功后，由`UserDetails.getAuthorities()`提供，存入`Authentication`对象。  
@@ -215,13 +202,13 @@ Spring Security 的认证流程是一个 “链式协作” 过程，涉及多�
 
 
 1. **加载用户信息**：调用`UserDetailsService.loadUserByUsername()`，根据用户名从数据库 / 缓存中查询用户信息，返回`UserDetails`对象（包含加密后的密码、权限等）。
-    
+   
     - 若用户不存在，抛出`UsernameNotFoundException`，触发认证失败流程。
 2. **密码比对**：通过`PasswordEncoder.matches(明文密码, 加密后密码)`比对用户输入的明文密码与`UserDetails`中存储的加密密码。
-    
+   
     - 若密码不匹配，抛出`BadCredentialsException`，触发认证失败流程。
 3. **校验账号状态**：检查`UserDetails`的`isEnabled()`（账号是否可用）、`isAccountNonLocked()`（是否锁定）等状态，若状态异常则抛出对应异常（如`DisabledException`）。
-    
+   
 
 #### 步骤 5：生成已认证的 Authentication 对象
 

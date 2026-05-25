@@ -1,17 +1,3 @@
----
-title: Spring Security 基础认证初步体验
-description: "本文为 Spring Security 入门级体验文档，核心聚焦「表单登录（Form Login）」和「HTTP Basic 认证」两种基础认证方式，帮助开发者快速理解 “前后端交互中的安全控制逻辑”—— 比如 “未认证请求如何被拦截”“登录凭证如何传递与验证” 等核心概念。\r\r本文不涉及生产级认证方案（如 JWT、OAuth2.0），仅作为安全认证的 “入门铺垫”；后续章节将针对实际开发场景，深入讲解 JWT 等主流认证方案的设计与实现。"
-author:
-  - 闵煜
-tags:
-  - SpringSecurity
-  - 表单登录
-  - HTTPBasic
-  - 权限控制
-created: 2025-09-04
-modified: 2025-09-04
----
-
 ## 默认安全控制
 
 ###  环境准备

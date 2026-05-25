@@ -1,14 +1,3 @@
----
-title: JWT 与 Spring Security 整合
-description: 本文介绍进阶认证方案，详解 JWT 原理、Spring Security 整合 JWT 的完整步骤（令牌生成 / 验证、自定义过滤器、异常处理等），解决前后端分离 / 微服务场景下的无状态认证问题，是基础认证的延伸与升级。
-author:
-  - 闵煜
-tags:
-  - SpringSecurity
-  - JWT
-created: 2025-09-03
-modified: 2025-09-04
----
 [Github](https://github.com/jwtk/jjwt) | [在线工具](https://www.jwt.io/)
 
 ## 为什么需要 JWT？
